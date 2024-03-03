@@ -16,22 +16,18 @@ class Item {
     if (this.name == 'Aged Brie') {
       this.updateQuality();
     } else if (this.name == 'Backstage passes to a TAFKAL80ETC concert') {
-      this.updateQuality()
-      if (this.sellIn < 11) {
-        this.updateQuality();
-      }
       if (this.sellIn < 6) {
-        this.updateQuality();
+        this.updateQuality(3);
+      } else if (this.sellIn < 11) {
+        this.updateQuality(2);
+      } else {
+        this.updateQuality()
       }
-    } else if (this.name == 'Sulfuras, Hand of Ragnaros') {
-      this.updateQuality(0, 80);
     } else {
       this.updateQuality(-1);
     }
 
-    if (this.name == 'Sulfuras, Hand of Ragnaros') {
-      this.updateQuality(0, 80);
-    } else {
+    if (this.name !== 'Sulfuras, Hand of Ragnaros') {
       this.sellIn = this.sellIn - 1;
     }
     if (this.sellIn < 0) {
