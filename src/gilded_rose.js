@@ -5,23 +5,23 @@ class Item {
     this.quality = quality;
   }
 
+  updateQuality() {
+    if (this.quality < 50) {
+      this.quality = this.quality + 1;
+    }
+  }
+
   update() {
     if (this.name == 'Aged Brie') {
-      if (this.quality < 50) {
-        this.quality = this.quality + 1;
-      }
+      this.updateQuality();
     } else if (this.name == 'Backstage passes to a TAFKAL80ETC concert') {
       if (this.quality < 50) {
         this.quality = this.quality + 1;
         if (this.sellIn < 11) {
-          if (this.quality < 50) {
-            this.quality = this.quality + 1;
-          }
+          this.updateQuality();
         }
         if (this.sellIn < 6) {
-          if (this.quality < 50) {
-            this.quality = this.quality + 1;
-          }
+          this.updateQuality();
         }
       }
     } else if (this.name == 'Sulfuras, Hand of Ragnaros') {
@@ -38,9 +38,7 @@ class Item {
     }
     if (this.sellIn < 0) {
       if (this.name == 'Aged Brie') {
-        if (this.quality < 50) {
-          this.quality = this.quality + 1;
-        }
+        this.updateQuality();
       } else if (this.name == 'Backstage passes to a TAFKAL80ETC concert') {
         this.quality = 0;
       } else if (this.name == 'Sulfuras, Hand of Ragnaros') {
