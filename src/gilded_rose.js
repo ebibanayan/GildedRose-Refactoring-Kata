@@ -29,7 +29,7 @@ class Item {
         this.quality -= 1;
       }
     }
-    
+
     if (this.name == 'Sulfuras, Hand of Ragnaros') {
     } else {
       this.sellIn = this.sellIn - 1;
@@ -40,10 +40,9 @@ class Item {
           this.quality = this.quality + 1;
         }
       } else if (this.name == 'Backstage passes to a TAFKAL80ETC concert') {
-        this.quality = this.quality - this.quality;
-      } else if (this.quality > 0) {
-        if (this.name == 'Sulfuras, Hand of Ragnaros') {
-        } else {
+        this.quality = 0;
+      } else if (this.name == 'Sulfuras, Hand of Ragnaros') {
+        if (this.quality > 0) {
           this.quality = this.quality - 1;
         }
       }
