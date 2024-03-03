@@ -22,14 +22,14 @@ class Item {
           }
         }
       }
+    } else if (this.name == 'Sulfuras, Hand of Ragnaros') {
+      this.quality -= 0;
     } else {
       if (this.quality > 0) {
-        if (this.name == 'Sulfuras, Hand of Ragnaros') {
-        } else {
-          this.quality = this.quality - 1;
-        }
+        this.quality -= 1;
       }
     }
+    
     if (this.name == 'Sulfuras, Hand of Ragnaros') {
     } else {
       this.sellIn = this.sellIn - 1;
